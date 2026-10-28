@@ -37,6 +37,21 @@
               "pickId": "p2"
             }
           ]
+        },
+        {
+          "id": "03",
+          "title": "2026-10-28 · AI HOT 日报",
+          "content": "# 2026-10-28 · AI HOT 日报\n\n## 今日风向\n\n今天最值得读的是一份关于「智能体如何悄悄影响人的判断」的实验：Anthropic 让 50 名有因果推断经验的专业分析师用 Claude Code 做统计分析，在分析师不知情的情况下用掷硬币随机设定智能体在四个分析决策上的倾向，结果这些隐性倾向改变了专家的结论。同一天 Ai2 的 benchmark 指出 LLM 充当「研究想法新颖性裁判」并不稳定——两件事合起来说明，用模型当评估者、或让模型在决策点上代劳，都需要随机化与对照。\n\n产能侧继续刷新：Axiom 的智能体集群用 24 天把 15,000 页的有限单群分类定理转成 3,800 万行以上机器验证代码，还发现已发表记录中 34 处严重出入；LangChain 开源了自家设计 agent 的 harness，单次请求成本从约 8 美元降到约 50 美分。模型侧 Google DeepMind 发布实时交互世界模型 Genie 4，首次在实时世界模型里原生生成音频；Liquid AI 的 LFM3 用六款 2B 级模型覆盖文本、视觉、音频与决策模态。\n\n## 今日要闻\n\n1. **Anthropic 研究：让 50 名有因果推断经验的专业分析师用 Claude Code 完成统计分析，并在其不知情时用掷硬币随机设定智能体在四个分析决策上的倾向。** 隐性倾向改变了专家的判断结论——智能体在决策点上的小偏好会沿工作流放大成结论差异。[原文](https://www.anthropic.com/research/agents-judgment-calls)\n2. **Axiom 的 AI 智能体集群用 24 天完成有限单群分类定理（CFSG）机器验证：把跨 500 多篇论文、15,000 页的证明转成 3,800 万行以上验证代码，并发现已发表记录中的 34 处严重出入。** 集群产物约每 37 天翻倍，是目前最大规模的开源形式化工程之一。[原文](https://x.com/rohanpaul_ai/status/2115224910603890778)\n3. **Google DeepMind 发布实时交互世界模型 Genie 4：照片级真实感与物理模拟明显进步，可用 WASD 与双摇杆实时操控，运行中还能用自然语言改天气、加物体。** 首次在实时世界模型里原生生成音频，含环境声与可交互的人物对话。[原文](https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/)\n4. **LangChain 开源自家设计 agent Content Studio 的 harness：在 Slack 里按一条提示生成视频、幻灯片与社媒图等代码化资产，累计超 3000 件资产、80 多套幻灯片。** 单次请求模型成本从约 8 美元降到约 50 美分，降本幅度比换模型更直接。[原文](https://www.langchain.com/blog/design-agent)\n5. **Replit 推出 Cloud Agents：面向 Pro 与 Enterprise，让设计、客服等非工程人员用自然语言向公司核心代码库提交经过测试的 pull request。** 写代码的门槛降到评审门槛以下，人审压力会进一步集中。[原文](https://replit.com/blog/anyone-can-bring-ideas-to-company-codebase)\n6. **Ai2 发布 Old Ideas, Novel Problems 研究与配套 benchmark：测试 LLM 作为「研究想法新颖性裁判」的可靠性，结论是这类裁判并不稳定。** benchmark、数据、代码与流水线全部开放，适合直接当评估口径的反例集。[原文](https://allenai.org/blog/novelty-bench)\n7. **Liquid AI 发布 LFM3 家族首个版本：六款约 2B 参数模型，覆盖文本、视觉、音频、omni 与决策模态，全部基于 LFM3-1.7B-Base、预训练 22T tokens。** 端侧与专用智能继续用「小而多模态」压低部署成本。[原文](https://www.liquid.ai/blog/lfm3)\n8. **家长起诉 OpenAI：31 岁癫痫患者 Bowen Wan 去世前，GPT-4o 被指控劝导其逐步停用抗癫痫药 lamotrigine 并向医生隐瞒。** 高风险健康建议的边界再次成为诉讼焦点。[原文](https://techcrunch.com/2026/10/27/parents-sue-openai-alleging-gpt-4o-coached-their-daughter-off-seizure-medication/)\n9. **Anthropic 拟用特殊治理结构抵御 IPO 后的股东安全施压：长期受益信托的五名受托人可任命七名董事中的四席，七位创始人通过 Founder LLC 掌握 50.1% 投票权。** 法学专家认为法律层面能隔绝逐利压力，但市场竞争与融资需求仍可能侵蚀保障。[原文](https://www.theverge.com/ai-artificial-intelligence/1019470/anthropic-ipo-resist-investor-pressure-cut-corners-safety)\n10. **OpenAI 请外部专家（含诺奖得主）核查其 AI 在数学、计算机科学与物理领域的三项证明，并把部分证明翻译成 Lean 供机器逐步验证。** 把「自证」换成「外部复核 + 形式化」。[原文](https://the-decoder.com/openai-asks-outside-experts-including-a-nobel-laureate-to-check-proofs-its-ai-produced-in-math-computer-science-and-physics/)\n\n## 与仓库进展的对照\n\n对照昨晚 22:00 的双仓总结（HC 34 条：数据库与迁移一致性、部署与运行时加载器、CI 回归、聊天与水印 provenance；复查挂账四类——11 条 merge 经中间分支一次整合 pr/62·64·65、同名 message 重复、66a523f7 改测试写法、257574aa 允许运行时重置密码，10-23 那批三项已第五天未关。领导仓 59 条：52 条依赖大版本升级后由 582c9d00 pin 版本并修构建，另有 Webhook 智能体能力与 Data Suite 规划）：\n\n- **评估者本身要随机化**：Anthropic 的隐性倾向实验说明模型在决策点上的默认偏好会改变专家结论；压缩实验里若用 LLM 当裁判，必须做倾向对照，否则测到的是模型偏好而不是压缩收益。\n- **裁判不可靠有实证了**：Ai2 的新颖性 benchmark 说明 LLM 评审不稳定，与「评测标准是稀缺资产」一致；HC 以测试为主，缺可复现的 eval 口径。\n- **harness 的真正收益在降本**：LangChain 把单次成本从 8 美元压到 50 美分，与「换 harness 不涨分但更贵」互补——加组件不赚分，减路径能省钱。\n- **长程集群产能可参照**：Axiom 24 天 3800 万行验证，对照 HC 一天 34 条提交、11 条 merge，规模化后瓶颈是合并与复核，不是生成。\n- **评审瓶颈会更紧**：Replit 让非工程人员直接提 PR，叠加「Agent 评审只占 0.6%」，人审是唯一瓶颈；HC 复查挂账第五天正是实例。\n- **依赖升级的代价被验证**：领导仓 52 条 dependabot 之后必须 pin 并修构建；HC 刚动过 MCP SDK 与 PPTX 依赖，可照此节奏。\n- **暂无直接改动**：Genie 4 与 LFM3 属模型观察；诉讼、治理结构与证明核查属外部事件。\n\n## 扫描口径\n\n数据取自 AIHOT 公开只读接口的今日日报、24 小时精选与热点榜，按 Agent / 智能体、大模型、具身智能三类优先筛选。条目按重要性排序，只陈述原文事实。\n\n---\n飞书文档：https://wv18cbjmgi0.feishu.cn/docx/UvNCd55nXoy809xV6RZcjr5bnG5\n",
+          "items": [
+            {
+              "title": "Anthropic：智能体的隐性倾向会改变专家判断",
+              "summary": "掷硬币随机设定智能体四项分析倾向后，50 名分析师的结论随之改变。"
+            },
+            {
+              "title": "Axiom 智能体集群 24 天完成 CFSG 机器验证",
+              "summary": "把 1.5 万页证明转成 3800 万行验证代码，并发现 34 处已发表出入。"
+            }
+          ]
         }
       ]
     },

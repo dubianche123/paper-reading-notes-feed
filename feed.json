@@ -37,6 +37,21 @@
               "pickId": "p2"
             }
           ]
+        },
+        {
+          "id": "03",
+          "title": "2026-10-30 · AI HOT 日报",
+          "content": "# 2026-10-30 · AI HOT 日报\n\n## 今日风向\n\n开源阵营今天把参数规模推到新档：Mistral Large 4（Le Chonk）以约 1T 总参数、49B 激活、1M 上下文的多模态 MoE 开放权重放出，API 价格约减半，Unsloth 的 1-bit GGUF 让它在 Mac Studio 上也能本地跑。Agent 侧两条更有意思——Factory 的 Droid 1.0 用「程序化工具调用」让模型写一段 JavaScript 在沙箱里一次执行数百个工具调用；Anthropic 的实验则给出一个吓人的数字：50 名因果推断专家在四项分析决策中，最高 86% 采纳了智能体被掷硬币随机指定的偏好，而且并不自知。\n\n评估与监测也在同一天被补齐：OpenAI 公开四层失准监测体系（激活探针、模型审查、调查智能体、自动化调查），Meta 的 Sharpening Tax 论文指出 RL 后训练让 Agent 首试更准、但在 128 次尝试内找到解法的能力反而变差。决策模型价格继续下探，Baseten 的 joey-1 做到每百万 token 一分钱、P50 延迟 20 ms。监管侧，特朗普把美国对进口机器人与工业机械的依赖定为国家安全威胁。\n\n## 今日要闻\n\n1. **Mistral Large 4（Le Chonk）开放权重发布：约 1T 总参数、49B 激活、1M 上下文的多模态多语言 MoE，API 价格约减半。** vLLM 提供 Day 0 支持，Unsloth 的 1-bit GGUF 把体积压到约 233GB、可在 Mac Studio 本地运行并保留 91% top-1 准确率。[原文](https://huggingface.co/blog/mistral-large4)\n2. **Factory 发布 Droid 1.0：模型无关的企业级 agent harness，主打程序化工具调用（PTC），模型通过编写 JavaScript 程序在沙箱中一次执行数百个工具调用。** 工具调用从「逐条往返」变成「整段程序」，对权限粒度与沙箱边界都是新要求。[原文](https://factory.com/news/frontier-harness)\n3. **Anthropic 实验：50 名因果推断专家在四项分析决策中最高 86% 采纳智能体被掷硬币随机指定的偏好，净影响 62% 到 82%，且专家并不自知。** 先有自己观点的人面对相反意见更易改主意，经验、学历与自评专业度都没有保护作用。[原文](https://the-decoder.com/experts-adopt-ai-agents-random-opinions-and-think-theyre-their-own-anthropic-study-finds/)\n4. **OpenAI 公开前沿模型失准行为的多层监测体系：激活探针、基于模型的审查、调查智能体与自动化调查四层，覆盖 GPT-6 Astra 及以上模型的全部 RL 运行、评估与内部 Codex 流量。** 监测从单一告警升级为分层流水线。[原文](https://openai.com/index/how-we-detect-frontier-model-misalignment)\n5. **Baseten 发布 2B 决策模型 joey-1：由 Qwen3.5-2B 后训练，直接返回标签与校准概率而非生成文本，2,000 token 请求 P50 延迟 20 ms，每百万 token 一分钱。** 面向高流量路由、分类与 guardrail 检查。[原文](https://www.baseten.co/blog/decisions-for-a-penny-introducing-joey-1/)\n6. **Meta 论文提出 Sharpening Tax：RL 后训练让 Agent 首次尝试更准，但在最多 128 次尝试内找到解法的能力反而变差。** 首试准确率与探索覆盖之间存在系统性折衷。[原文](https://x.com/rohanpaul_ai/status/2115854746456346784)\n7. **OpenRouter 重建默认路由算法：从只按价格排序改为按 Routing Cost 综合有效价格、TTFT、吞吐、错误率与输出质量选路，TTFT 降 16.9%、429 错误减少 67%。** 多供应商调度开始把「质量」纳入目标函数。[原文](https://openrouter.ai/blog/announcements/how-we-rebuilt-provider-routing/)\n8. **Wiz 总结智能体参与真实入侵的七大指纹：涉及 ARTEX、Hermes 等框架，案例包括韩国金融机构约 67,000 人信息外泄、泰国财政部、ConnectWise 供应链对超 2,250 个租户的尝试攻击。** 智能体攻击已进入有指纹可循的常态化阶段。[原文](https://www.wiz.io/blog/the-rise-of-agentic-attacks-what-they-look-like-and-where-theyre-headed)\n9. **腾讯混元发布 Hy-Nomas 开源交互式视频世界模型技术报告（arXiv:2610.36729），并开源 Hy-Nomas-Bench 数据集，官方用其重现 Genie 4 示例并放出对比视频。** 世界模型从单点演示走向可复现基准。[原文](https://x.com/TencentHunyuan/status/2115851165904814283)\n10. **特朗普宣布美国对进口机器人、工业机械及其部件的依赖构成国家安全威胁，把外国机器人视为网络安全暴露面。** 首选应对是谈判，商务部与 USTR 须在 180 天内报告进展，否则可加征关税或启动本土生产激励。[原文](https://x.com/rohanpaul_ai/status/2115905275416994206)\n\n## 与仓库进展的对照\n\n对照昨晚 22:00 的双仓总结（HC 2 条均由 devin-ai-integration 提交：MCP 代理的列表与单条路由加 admin scope 校验、上游地址变更时主动丢弃已保存的 auth header、两个 store 同步调整并把回归接入 enterprise-state-regressions；另新增 SECURITY_MODEL.md 威胁模型文档。挂账：凭证静默失效、scope 覆盖是否一致、威胁模型是否排进待办，10-23 那批三项已第七天。领导仓 15 条：Rules & Knowledge 套件（R1/K1 落地、K2 知识生命周期 + kb scopes RBAC、K3 图谱增量同步与复核痕迹）、R2 歧义消解确认协议、Data Suite P2 A7 脱敏/水印/鉴权）：\n\n- **人的判断也会被带偏**：86% 采纳率说明「人审兜底」并不天然可靠；HC 刚把不可逆操作收进 admin scope 与确认流程，建议同时留可核验的操作记录。\n- **批量工具调用会放大权限**：Droid 一次程序跑数百个调用，凭证作用域必须精确到工具级；HC 的 auth header 改动方向对，但要补「改 URL 后凭证丢失」的显式提示。\n- **监测不能停在文档**：OpenAI 四层监测说明威胁模型该落成可运行检查；SECURITY_MODEL.md 目前是纯文档，需把处置措施排进待办。\n- **决策成本已可忽略**：joey-1 一分钱每百万 token、20 ms 延迟，压缩决策器可按 turn 在线跑，payback horizon 的决策成本项基本归零。\n- **学策略要看探索覆盖**：Sharpening Tax 提醒只优化首试成功率会牺牲 128 次内可解性，reward 设计要把「多试能否成功」单列。\n- **路由即调度**：OpenRouter 把 TTFT 与错误率并入目标函数，与「何时本地、何时云端」同源。\n- **暂无直接改动**：Mistral Large 4 影响选型与本地部署上限；Wiz 指纹属威胁情报；Hy-Nomas 与机器人政策属观察项。\n\n## 扫描口径\n\n数据取自 AIHOT 公开只读接口的今日日报、24 小时精选与热点榜（今日日报收录 12 条，另补 24 小时全量共 120 条候选），按 Agent / 智能体、大模型、具身智能三类优先筛选。条目按重要性排序，只陈述原文事实。\n\n---\n飞书文档：https://wv18cbjmgi0.feishu.cn/docx/ZqINdncHGoHU2JxE1rlcw8YhnQg\n",
+          "items": [
+            {
+              "title": "Mistral Large 4（Le Chonk）开放权重：1T 参数 MoE",
+              "summary": "49B 激活、1M 上下文，API 约减半；1-bit GGUF 可在 Mac Studio 本地跑。"
+            },
+            {
+              "title": "Anthropic：专家最高 86% 采纳智能体的随机偏好且不自知",
+              "summary": "50 名因果推断专家在四项分析决策中被掷硬币设定的偏好带偏，净影响 62%-82%。"
+            }
+          ]
         }
       ]
     },

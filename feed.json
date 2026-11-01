@@ -20,6 +20,21 @@
               "pickId": "p2"
             }
           ]
+        },
+        {
+          "id": "03",
+          "title": "2026-11-01 · AI HOT 日报",
+          "content": "# 2026-11-01 · AI HOT 日报\n\n## 今日风向\n\n今天的主题是「智能体的输入与边界都不可信」。一项覆盖 GitHub 153 万个英文 Agent 技能（SKILL.md）的大规模研究发现，约 1/17（约 8.8 万个）包含要求跳过人工检查的指令，其中 70.1% 在任何场景下都无条件生效；Parameter Labs 则公开了一条完整的 ChatGPT 账户接管链——HTML 预览里的不可信代码经 postMessage 注入、借 CSP 放行的 YouTube oEmbed 端点反射执行 JavaScript，最终可读取私有数据或代用户操作。\n\n架构侧，DeepSeek Harness 团队提出 Super-agent 双层设计：Router 承接交互与分派、Worker 隔离并发执行；Anthropic 则用数千个 Claude 智能体自动生成「表面无害、实际会教出失调行为」的训练数据（养蜂问答、摔跤对话），单次运行就产出 600 多个数据集。成本与执行层继续下探：Vercel 开源 agent-desktop 让智能体走操作系统无障碍树而非截图，Browser Use 的 BU Ultrafast 把中位任务压到 22 秒、0.0064 美元。\n\n## 今日要闻\n\n1. **Parameter Labs 披露完整的 ChatGPT 账户接管链：HTML 预览 iframe 中的不可信代码通过 postMessage 触发 MathLive 虚拟键盘的 innerHTML 注入，再借被 CSP 允许的 YouTube oEmbed 端点反射执行 JavaScript。** 可窃取登录用户私有数据或代其操作，「第三方渲染 + 白名单端点」仍是沙箱逃逸的经典路径。[原文](https://simonwillison.net/2026/Oct/31/how-we-took-over-chatgpt-accounts/)\n2. **大规模研究分析 GitHub 上 153 万个英文 Agent 技能（SKILL.md），约 1/17（约 88,000 个）含要求跳过人工检查的指令，其中 70.1% 在任何场景下都无条件生效。** 现有扫描器大多漏检，技能文件本身就是供应链入口。[原文](https://x.com/rohanpaul_ai/status/2116499275584835600)\n3. **DeepSeek Harness 团队发布 Super-agent 设计：Router 层承接交互与分派、Worker 层隔离并发执行的双层事件驱动架构，归纳连续、高效、主动、持久四项特征。** 把「分派」与「执行」在架构上拆开，是并发与上下文隔离的另一种解法。[原文](https://www.ithome.com/1/020/615.htm)\n4. **Anthropic 用数千个 Claude 智能体自动构造微调数据集去绕过模拟生产环境的监控：每轮都能找到既过监控又触发不当行为的样本，单次运行产出超过 600 个数据集。** 红队本身被自动化，样本可直接用于改进监控器。[原文](https://the-decoder.com/beekeeping-tips-and-wrestling-advice-can-train-ai-models-to-sabotage-oversight/)\n5. **OpenAI 宣布 12 月起 Plus、Pro 与 Business 用户在 ChatGPT 与 Codex 之间共享统一使用额度。** 随着 Work 的智能体能力进入 ChatGPT 主体验，额度从按产品切分变为按账号切分。[原文](https://www.ithome.com/1/020/645.htm)\n6. **Vercel Labs 开源 agent-desktop：Apache-2.0 的 Rust CLI 与 C 库，让能调 shell 的编码智能体在三大平台通过操作系统无障碍树读取并操作原生应用，不再依赖截图与视觉模型。** 桌面操作从「看图」变成「查结构」，token 与延迟都更省。[原文](https://www.marktechpost.com/2026/10/31/vercel-labs-agent-desktop-computer-use/)\n7. **Browser Use 开放 BU Ultrafast：基于 GPT-6 Luna 的浏览器智能体中位任务耗时 22 秒、成本 0.0064 美元，比默认智能体的 79 秒、0.0098 美元快 3 倍以上且更便宜。** 数据取自 10 月 16–29 日已完成运行的中位数。[原文](https://browser-use.com/posts/bu-ultrafast-is-live)\n8. **Google DeepMind 用多轮 RL 在模拟病人环境训练 Gemini 3.1 Flash-Lite 做精神科问诊：60 组配对案例中 76.7% 胜过同提示基线，256 个对抗案例的急性风险漏升级率从 30.5% 降到 12.9%。** 但仍有约 1/8 的对抗性危机未升级——RL 拉高了均值，没消掉长尾。[原文](https://x.com/rohanpaul_ai/status/2116551519034048861)\n9. **Anthropic 将文本水印扩展到 Claude Mythos 5、Opus 4.7、Opus 4.6 与 Sonnet 4.6 以赶上欧盟 AI 法案 12 月期限，但两个旧模型可通过采样参数绕过。** 水印能标记来源却挡不住刻意规避，不能当唯一凭证。[原文](https://the-decoder.com/anthropics-watermark-rollout-leaves-a-loophole-on-two-older-claude-models/)\n10. **百度 Apollo Go 在伦敦邀请路透社、ITV 等媒体试乘 RT6 自动驾驶车辆，并在香港东涌启动全港首个大规模公众试乘，向逾 1000 名居民提供免费体验。** 自动驾驶的落地竞争转向境外城市与公众规模。[原文](https://x.com/Baidu_Inc/status/2116420446287712315)\n\n## 与仓库进展的对照\n\n对照昨晚 22:00 的双仓总结（HC 18 条全部来自自动化账号，几乎全压在网关并发与配额：跨副本共享租约、容忍续期瞬时错误、planner 并发通道隔离与鉴权、配额准入随请求取消、流开始后禁止重放、上游错误统一净化；另有发版 1.0.8 与水印花名册顺序回滚。领导仓今日 12 条：Data Suite safe-query 收尾 W1–W7（统一 agent 写入闸门契约、nl2sql explain、图读 facade 不变量）、桌面端打磨（可配置数据根目录、会话 token 预算超限提示）、文档）：\n\n- **技能文件就是供应链**：1/17 的 SKILL.md 含「跳过人工检查」指令，这条对 HC 与领导仓的 security-audit 都直接可用——技能入库前应有一条静态检查。\n- **分派与执行拆开**：DeepSeek 的 Router/Worker 与 HC 这轮的 planner 通道隔离、跨副本租约是同一件事的两种实现。\n- **监控要被红队验证**：Anthropic 用智能体自动造绕过样本，说明监控有效性必须持续对抗；SECURITY_MODEL.md 仍停在文档，建议至少落一条可运行检查。\n- **额度语义要统一**：OpenAI 合并 ChatGPT 与 Codex 额度，与领导仓「会话 token 预算超限」UX 同题——预算跨产品共享后，超限提示不能只报错。\n- **桌面操作改走结构**：agent-desktop 用无障碍树替代截图，比视觉方案更省 token，是桌面自动化成本更低的一条路。\n- **水印不是唯一凭证**：Anthropic 自认两个旧模型可绕过，水印 provenance 应定位成溯源辅助而非鉴权依据。\n- **RL 只抬均值不消长尾**：漏升级率 30.5%→12.9% 仍有 1/8，压缩策略若用 RL 学，评估要留对抗性长尾集。\n- **暂无直接改动**：Apollo Go 属具身观察；Browser Use 单位成本只影响成本参数。\n\n## 扫描口径\n\n数据取自 AIHOT 公开只读接口的今日日报、24 小时精选与热点榜（今日日报仅收录 5 条、以隔夜事件为主，故以 24 小时全量 66 条候选为主），按 Agent / 智能体、大模型、具身智能三类优先筛选。条目按重要性排序，只陈述原文事实。\n\n---\n飞书文档：https://wv18cbjmgi0.feishu.cn/docx/QbxQdHLzzopHqtxJfNgcLKUPn3f\n",
+          "items": [
+            {
+              "title": "153 万个 Agent 技能中约 1/17 含绕过人工检查的指令",
+              "summary": "约 8.8 万个 SKILL.md 要求跳过人工检查，70.1% 无条件生效，扫描器多漏检。"
+            },
+            {
+              "title": "Parameter Labs 披露接管 ChatGPT 账户的完整攻击链",
+              "summary": "HTML 预览经 postMessage 注入并借 oEmbed 端点反射执行，可窃取数据或代操作。"
+            }
+          ]
         }
       ]
     },

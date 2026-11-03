@@ -37,6 +37,21 @@
               "pickId": "p3"
             }
           ]
+        },
+        {
+          "id": "03",
+          "title": "2026-11-03 · AI HOT 日报",
+          "content": "# 2026-11-03 · AI HOT 日报\n\n## 今日风向\n\n今天最有信息量的是三条关于「上下文经济学」的进展。Anthropic 在 Claude Platform 公测 message threads：智能体每轮只发新增消息、不再重发全部历史，首 token 时间随之下降；Arena 统计 2.6 万条会话发现排名前十的智能体输入输出比高达 93:1，这被直接点名为各家压缓存输入成本的原因；清华与微软的 HarnessMM 让模型预写带校验条件的后续命令、校验通过就跳过 LLM 调用，在 HumanEval 上把 DeepSeek Harness 的 token 用量砍掉 87.93%。\n\n范式侧也在动：MIT CSAIL 让 GPT-6 Astra 无需训练与梯度直接读写权重，仅改 Qwen3.5-0.8B 约 0.016% 的参数，MATH-500 就从 7.9 涨到 48.1、GSM8K 从 13.8 涨到 67.1。组织与产能侧，Anthropic 更新版 IPO 文件首次披露三季度业绩，算力与基础设施合同承诺约 8954 亿美元；腾讯混元把自动化科研从「直接解题」改成「让 agent 造工具」。能力边界同时被打了一针清醒剂：SemiAnalysis 的 GDPx 基准里，最强的 Claude Opus 5.5 在 11 个领域专家工作上平均只有 12%。\n\n## 今日要闻\n\n1. **MIT CSAIL 提出权重空间编程：用 GPT-6 Astra 无需训练和梯度直接读写神经网络权重，仅改 Qwen3.5-0.8B 约 0.016% 的参数，MATH-500 从 7.9 升到 48.1、GSM8K 从 13.8 升到 67.1，指令遵循提升 3 倍。** 「模型改模型」从提示词层下沉到参数层。[原文](https://x.com/indigox/status/2117415419061604607)\n2. **Anthropic 在 Claude Platform 公测 message threads：智能体每轮只发送新增消息，不再重发全部对话历史，从而缩短首 token 时间。** 把「重发历史」的成本交给服务端缓存，压缩的替代方案多了一条。[原文](https://claude.com/blog/message-threads)\n3. **Anthropic 更新版 IPO 文件首次披露三季度业绩：算力与基础设施合同承诺约 8954 亿美元，其中 4475 亿美元须在 2031 年前支付，仅 2138 亿美元可取消或附带条件。** 承诺的刚性远超一般云合同。[原文](https://x.com/rohanpaul_ai/status/2117368258571784296)\n4. **腾讯混元发布 Hyra 2.0：把自动化科研的重点从直接解题，转向由 agent 研发和升级科学模型、工作流与软件工具；采用 Overall、Mission、Worker 三层分工，接入企业微信、计算平台与代码仓库的真实研发环境。** Agent 的产出物从「答案」变成「可复用的工具」。[原文](https://mp.weixin.qq.com/s?__biz=MzkwODU2OTQyNQ%3D%3D&mid=2247498763&idx=1&sn=279f8fb4e43a987fdc0aa2af0b0f7958)\n5. **清华与微软提出 HarnessMM：让模型预先写出带校验条件的后续命令，工具结果通过校验就直接执行、跳过 LLM 调用。** 98 个 HumanEval 任务上 DeepSeek Harness 成功率从 71.43% 升到 85.71%，token 用量减少 87.93%；Codex 成功率保持 90.82%，token 减少 29.54%。[原文](https://x.com/rohanpaul_ai/status/2117177813652709633)\n6. **Meta 论文提出 Routed CL：智能体从过往尝试学习时，把新问题匹配到相似问题的笔记，比共用一份全量历史更有效。** 用一个 LLM 路由器在每次运行前复用或新建记忆簇，每簇采用五种记忆类型之一。[原文](https://x.com/rohanpaul_ai/status/2117317080618041761)\n7. **SemiAnalysis 发布 GDPx 基准：11 个领域的专家工作、14 家专业数据伙伴出题，Claude Opus 5.5 平均仅 12% 居首，Gemini 4 Carbon 为 10.9%。** GPT-6 Astra 只在 AI 研究与材料科学任务上领先。[原文](https://x.com/rohanpaul_ai/status/2117236578712186935)\n8. **Agent Arena 基于 26K+ 会话统计：排名前十的智能体每生成一个 token，大约要处理 93 个输入 token。** 被直接点名为各家实验室竞相降低缓存输入成本的原因。[原文](https://x.com/arena/status/2117332916854501753)\n9. **Addy Osmani 总结 Claude Code 的循环工程：goal 用 /goal 定义可验证的完成条件，loop 类似 cron 按固定间隔重跑提示词并可 /schedule 移到云端，他同时并行跑五到十个 Agent。** 「可验证完成条件 + 固定节拍」正在替代一次性长提示。[原文](https://www.oreilly.com/radar/practical-loop-engineering/)\n10. **苹果计划 2027 年推出代号 J595 的 AI 家用机器人，售价 1000 美元以上，可自主移动、支持 FaceTime 并在有人进屋时自动开关灯，开发延迟或推迟到 2028 年。** 具身产品第一次被摆到消费电子价位上讨论。[原文](https://arstechnica.com/apple/2026/11/apples-roaming-home-robot-may-do-facetime-switch-lights-on-and-yell-at-your-cat/)\n\n## 与仓库进展的对照\n\n对照昨晚 22:00 的双仓总结（HC 今日 0 条提交，窗口内 7 条集中在 11-01 下午：OIDC 登录必须先绑定 provider 身份再走邮箱关联；可授予权限上限延伸到批量导入 upsert，代他人签发 API token 需 user:update 与 allowlist scope；技能包拉取 DNS 固定补 IPv6 字面量；一次性修七个生产依赖告警。复查挂账：身份绑定顺序即账号接管路径、某条 1.8 万行属可疑量、代签发 token 是高危新能力、DNS 已打第二个补丁、七个告警防跨大版本。领导仓今日 3 条：MA 与 ECP 两套运营手册加录制器、录制缩放修复、ECP 收尾）：\n\n- **压缩之外多了一条路**：message threads 用服务端会话缓存替代「重发历史」，说明「不压缩」的工程成本会持续下降；payback horizon 实验应把「缓存/引用」当独立基线。\n- **93:1 解释了缓存军备竞赛**：输入远多于输出，压缩与缓存收益空间都大；但缓存命中率高时压缩的边际收益会被吃掉，与 10-31「缓存省 3.6 倍」一致。\n- **确定性校验能跳过模型**：HarnessMM 把「条件满足就直接执行」做成 87.93% 的 token 下降，与「重要规则要用确定性手段」同一原则。\n- **记忆按类型分池**：Routed CL 的路由器分配记忆簇，对应「摘要按主题/类型分池、别共用全量历史」，可作压缩状态划分的实验设计。\n- **循环工程可直接照搬**：goal 的可验证完成条件 + loop 的固定节拍，与 HC 五条 cron 管线、批量自动化提交同形态，缺的是「完成条件可验证」。\n- **别高估交付能力**：GDPx 最强只有 12%，而 HC 一天几十条提交——生成便宜、验收昂贵，这也是复查挂账积压的原因。\n- **暂无直接改动**：MIT 权重编程与 Hyra 2.0 属方法观察；Anthropic 算力承诺只影响长期成本假设；苹果 J595 属具身观察。\n\n## 扫描口径\n\n数据取自 AIHOT 公开只读接口的今日日报、24 小时精选与热点榜（今日日报收录 7 条，另补 24 小时全量共 120 条候选），按 Agent / 智能体、大模型、具身智能三类优先筛选。条目按重要性排序，只陈述原文事实。\n\n---\n飞书文档：https://wv18cbjmgi0.feishu.cn/docx/IBUidke9loNnGWx1hbVcELrdnXc\n",
+          "items": [
+            {
+              "title": "MIT 提出权重空间编程：GPT-6 Astra 直接改写权重",
+              "summary": "无需训练与梯度，改 0.016% 参数让 MATH-500 从 7.9 升至 48.1。"
+            },
+            {
+              "title": "Claude Platform 公测 message threads，只发新增消息",
+              "summary": "每轮不再重发全部历史，首 token 时间缩短，公测中。"
+            }
+          ]
         }
       ]
     },

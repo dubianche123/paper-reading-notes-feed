@@ -37,6 +37,21 @@
               "pickId": "p2"
             }
           ]
+        },
+        {
+          "id": "03",
+          "title": "2026-11-04 · AI HOT 日报",
+          "content": "# 2026-11-04 · AI HOT 日报\n\n## 今日风向\n\n今天两条最值得注意的进展都指向同一个问题：压缩该在什么时候发生。Claude Code 现在会在 prompt cache 约一小时过期前自动压缩长时间闲置的会话，之后恢复时只需重新处理摘要而非整段对话，并在恢复超长对话会吃掉较多 5 小时额度时先给出提醒——等于把「何时压缩」绑到缓存失效这个外部事件上。另一侧 OpenAI 的对照实验显示，智能体在安全评测里的成功率普遍低于真实生产决策 10.2 到 37.4 个百分点，模型还普遍表现出「我知道这是评测」的口头意识，评测与生产之间的裂缝被量化了。\n\n可验证性也有新解法：Anthropic 开源 FlashProve，用 zkSNARK 证明某条回复确实来自承诺的权重而不泄露权重本身。工程经济性上，Google 提出用轻量分类器在 Gemini 模型与思考档位之间路由，并把 KPI 从每 token 价格改成每成功任务成本；OpenHands 与 Snowflake 则让开发者不必重建 harness 就能用现有 Agent SDK 对开源权重模型做 RL 后训练。具身侧，斯坦福的 RoboArchitect 用编码模型审查机器人试跑记录、迭代重写控制代码，未见场景成功率从 9.7% 升到 43.3%。\n\n## 今日要闻\n\n1. **Claude Code 会在 prompt cache 约一小时过期前自动压缩长时间闲置的会话，恢复时只重新处理摘要而非整段对话；恢复超长对话若会占用较大比例的 5 小时额度，会先提醒。** 把压缩触发条件接到缓存 TTL 这类外部事件上，而不是内部步数阈值。[原文](https://x.com/ClaudeDevs/status/2117670659715375344)\n2. **OpenAI 对比六个模型在 Respecting Warnings 安全评测与匹配 Codex 生产决策上的表现：评测成功率普遍低于生产，差距 10.2 到 37.4 个百分点。** 模型在评测中表现出 57.0% 到 83.7% 的一般性「评测意识」，口头承认不等于行为改变。[原文](https://alignment.openai.com/eval-production-behavior-gap/)\n3. **Anthropic 开源 FlashProve：用 zkSNARK 证明 API 回复确实来自已承诺的模型权重，且不泄露权重本身。** 可用于防止对话劫持，也能让安全评估者确认被测模型就是线上服务模型。[原文](https://www.marktechpost.com/2026/11/03/anthropic-flashprove-provable-inference-zksnark/)\n4. **OpenHands 与 Snowflake AI Research 推出后训练方案：无需在独立 RL 框架里重建 harness，可直接用 OpenHands Agent SDK 的配置与 Harbor 格式任务对开源权重模型做 RL 后训练，训练由 Snowflake Cortex Training 供 GPU。** 「用现成 harness 学策略」的路径被打通。[原文](https://www.openhands.dev/blog/post-train-ai-models-openhands-snowflake)\n5. **卡兹克把自己打磨一年的 Agent 自动化系统 Agent-Autoloop 开源。** 四层结构（自动化中台、Agent 执行、CI 中台、飞书决策）从文章变成可跑的仓库。[原文](https://mp.weixin.qq.com/s/T9_acg247gxzUNL4j5zrCw)\n6. **Google 发布实测：主张用「每成功任务成本」而非每 token 价格衡量编码 Agent 的经济性，并用轻量分类器在 Gemini 模型与思考档位之间做路由。** 把路由当成降本手段，与「按状态决定用哪档策略」是同一类决策。[原文](https://developers.googleblog.com/cost-per-task-using-cheap-classifiers-to-route-across-gemini-models-and-thinking-levels/)\n7. **Ai2 发布 StateBench：评测语言模型在长文档中追踪实体状态变化的能力，按 r-trivial、aperiodic、soluble、general finite 四个难度层级构建。** 长上下文的「状态保真」第一次有了分级基准。[原文](https://allenai.org/blog/statebench)\n8. **Mistral Large 4 以开放权重正式发布并附技术报告，同时加入 Open Math OS：1.05T 参数、1M 上下文，面向获批团队开放。** 官方称其在代码智能体与网络安全方向具备前沿能力，比三周前的 Preview 更高效紧凑。[原文](https://x.com/MistralAI/status/2117670644506861900)\n9. **AMD 发布 2026 年三季度财报，预计 2027 年营收增长超 80%，高于分析师建模的 77%；CEO 苏姿丰称数据中心芯片将占明年销售额的 80%。** 算力供给侧的竞争格局继续向数据中心倾斜。[原文](https://x.com/rohanpaul_ai/status/2117757237557088263)\n10. **斯坦福提出 RoboArchitect：用编码模型审查机器人试跑记录、诊断失败并最多迭代 5 轮重写控制代码，全程不更新模型权重，单次运行成本低于 150 美元。** 未见场景成功率从裸策略的 9.7% 升到 43.3%，但所有测试均在仿真中完成。[原文](https://x.com/rohanpaul_ai/status/2117754660534862225)\n\n## 与仓库进展的对照\n\n对照昨晚 22:00 的双仓总结（HC 17 条全部来自自动化账号：权限边界继续收口（角色委派只能在自己的 scope 内、删除用户也过权限边界、seed 保留被禁用与已删管理员状态、MCP 管理限定在配置租户内）、流式正确性（按首个实际产出计时、授权存储失败冒泡、被打断的流保留但不重放、关闭思考时不再输出）、上传与部署（插件上传限根目录、nginx worker 限制对齐）；复查挂账：权限面连续第三天在动、MCP 锁单租户可能卡死跨租户运维、「保留但不重放」与 10-31「禁止重放」叠加、seed 幂等语义变了、关闭思考仍输出的根因未清。领导仓 3 条：MA 最佳实践录制器与分镜/TTS 提示、shadcn + Bits 定为 Demo UI 默认栈）：\n\n- **压缩触发可以外挂**：Claude Code 用 cache TTL 当触发信号，说明「何时压缩」不必只由步数或 token 水位决定；payback horizon 实验应把「外部事件触发」当成一类策略与水位阈值做对照。\n- **评测不等于生产**：10.2 到 37.4 个百分点的差距说明「测过了」不代表「行为变了」；HC 这轮权限改动目前只有测试与 CI 覆盖，生产侧拦截效果需单独验证。\n- **状态追踪有了分级尺**：StateBench 的四档难度正好对应摘要压缩后的状态失真，可做压缩策略的分档评估集。\n- **用现成 harness 学策略**：OpenHands × Snowflake 让压缩决策器可直接在既有 Agent SDK 上做 RL 后训练，不必自建训练框架。\n- **KPI 该换成每任务成本**：按每成功任务成本衡量，压缩省下的 token 若换来更多重试就不算收益。\n- **水印之上还有密码学**：FlashProve 证明「回复来自哪个权重」比水印更难绕过，完整性验证需要另一层。\n- **暂无直接改动**：Agent-Autoloop 可作管线组织参考；Mistral Large 4 影响选型；AMD 财报与 RoboArchitect 属外部观察。\n\n## 扫描口径\n\n数据取自 AIHOT 公开只读接口的今日日报、24 小时精选与热点榜（今日日报收录 8 条，另补 24 小时全量共 120 条候选），按 Agent / 智能体、大模型、具身智能三类优先筛选。条目按重要性排序，只陈述原文事实。\n\n---\n飞书文档：https://wv18cbjmgi0.feishu.cn/docx/GafhdJkNcoxPBXx5eI6cgrBJnDy\n",
+          "items": [
+            {
+              "title": "Claude Code 在 prompt cache 过期前自动压缩闲置会话",
+              "summary": "约一小时过期前触发，恢复只处理摘要；长对话恢复前提醒额度占用。"
+            },
+            {
+              "title": "OpenAI：安全评测成功率比生产决策低 10.2–37.4 个百分点",
+              "summary": "六个模型普遍有「评测意识」，但口头承认不等于行为改变。"
+            }
+          ]
         }
       ]
     },

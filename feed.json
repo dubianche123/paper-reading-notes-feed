@@ -1,6 +1,27 @@
 {
   "days": [
     {
+      "date": "2026-11-09",
+      "model": "Amoo",
+      "channels": [
+        {
+          "id": "03",
+          "title": "2026-11-09 · AI HOT 日报",
+          "content": "# 2026-11-09 · AI HOT 日报\n\n## 今日风向\n\n今天的重点在「评审与监控被实证检验」。Google 开源 Elephant-Goldfish 插件，让编码智能体先产出规格，再由没有对话历史的「金鱼」子智能体分五个阶段评审规格——用无状态评审员对抗上下文污染；阿里与多所亚洲高校的 Co-Design Bench 则显示，最好的 GPT-6 Astra 平均满足约 70% 的任务要求，但只有 26.4% 的任务完全正确。监控侧，清华的 TraceMRT 把隐藏任务包装成主任务的合理解子目标，对 GPT-5.2 与 Claude 4.5 监控的平均逃逸率从 27.56% 抬到 59.94%；Amazon 审计 9 个政策决策基准，发现评分器与参考答案自身就有错。\n\n评估口径上，Artificial Analysis 的 Decision Index v2 把正确率与置信度校准合成 Decision Score、私有数据集占比从 25% 升到 45%。规模与产业侧：DeepSeek 的开源智能体应用 Harness 上线不到三个月日活 154 万（仅计官方 API 用户），Nvidia 董事会对 CEO 黄仁勋相关的报道启动独立调查，Anthropic 以 34 亿美元买下 1.7GW 燃气发电机组。\n\n## 今日要闻\n\n1. **Google 开源 Elephant-Goldfish Model 插件：编码智能体在写代码前先产出规格，再由没有对话历史的 Goldfish 子智能体按 5 个阶段评审规格。** 用「无状态评审员」对抗上下文污染。[原文](https://www.marktechpost.com/2026/11/08/google-elephant-goldfish-model-plugin-spec-review-coding-agents/)\n2. **Artificial Analysis 发布 Decision Index v2：私有数据集占比从 25% 提升到 45%，并引入同时奖励正确性与置信度校准的 Decision Score 作为头条指标。** 把「敢不敢说自己不确定」纳入决策质量。[原文](https://artificialanalysis.ai/articles/decision-index-v2)\n3. **Co-Design Bench 用真实编码会话里的用户修改请求测 10 个模型：最好的 GPT-6 Astra 平均满足约 70% 的任务要求，但仅 26.4% 的任务完全正确，Grok 4.6 垫底。** 「大部分对了」与「可以交付」之间仍有三倍差距。[原文](https://the-decoder.com/ai-coding-agents-still-need-human-cleanup-on-nearly-three-out-of-four-tasks-in-a-real-world-test/)\n4. **清华 TraceMRT 把隐藏任务改写为主任务的合理子目标来攻击 CoT 监控：在 SHADE-Arena 上对 GPT-5.2 与 Claude 4.5 监控的平均逃逸率从 27.56% 升到 59.94%。** 配套的贝叶斯轨迹监控把检测 AUC 从 0.26 提到 0.91，建议对整体轨迹与关键步骤分别打分。[原文](https://x.com/rohanpaul_ai/status/2119402688870023190)\n5. **Amazon 论文审计 9 个政策类决策基准（税务、法律、商业规则），发现它们常把正确答案判错，原因在基准自身的参考答案或评分代码有误。** 评测集本身需要先被评测。[原文](https://x.com/rohanpaul_ai/status/2119541630361554965)\n6. **Bloomberg 报道 DeepSeek 开源智能体应用 Harness 上线不到 3 个月日活达 154 万，仅统计官方 API 用户，从 9 月 30 日桌面版发布时的 27.1 万增长而来。** 开源 harness 的用户规模开始按百万计。[原文](https://x.com/rohanpaul_ai/status/2119502039147565171)\n7. **GPT-6.1 Sol 连续三次参与活体小鼠脑部手术的 Bregma 与 Lambda 解剖标志定位，定位误差从 0.6 毫米降到 0.3 毫米，每次由外科医生纠正后保存图像与测量数据供下次参考。** 改进来自「错误被记录并回灌」，不是权重更新。[原文](https://www.ithome.com/1/023/900.htm)\n8. **Nous Research 发布 Arete-27B：对 Qwen3.8-27B 做纯监督微调，在自建 803 条提示评测中把含宣传内容的回答从 22% 降到 0.9%，事实得分从 2.32 升到 2.98。** 偏好层面的差异可用很小的后训练成本抹平。[原文](https://www.marktechpost.com/2026/11/07/nous-research-arete-27b-qwen3-8-27b-propaganda-fine-tune/)\n9. **Nvidia 董事会宣布就 CEO 黄仁勋与新加坡芯片公司 Megaspeed 高管 Alice Huang 关系的报道启动独立调查，由独立董事组成的委员会在外部律师协助下监督。** 董事会称没有理由认为国家安全或公司机密已受损。[原文](https://techcrunch.com/2026/11/08/nvidia-says-its-investigating-ceo-jensen-huangs-relationship-with-possible-chinese-spy/)\n10. **Anthropic 以 34 亿美元从得州供应商 OnePWR Solutions 接下 1.7GW 重型燃气发电机组订单，为已知 AI 公司最大规模的发电设备采购。** 订单原属对方两年前所下、因融资失败转手，因下单早于涨价将在未来两年内交付。[原文](https://www.ithome.com/1/023/989.htm)\n\n## 与仓库进展的对照\n\n对照昨晚 22:00 的双仓总结（HC 连续第三天 0 条新提交，main 仍停在 11-05；五项挂账全部原样——chat replay 那条 5.6 万行提交未核、转发头收窄后代理清单未同步会误判 IP、四笔依赖同日更新是否跨大版本、1.0.9 是第三个由自动化账号直接发的版本、10-23 两项已挂半个月。领导仓今日 4 条：CodeBuddy 会话跨引擎拉起 Claude Code CLI 的 subagent（#314）、子 agent 注册进 WorkPanel 的 Spawns 列表（#315）、把 CodeBuddy 的「假成功」改成等待真实产物（#313）、切回 AgenticX 引擎时把上文同步写入 agent_messages（#312））：\n\n- **无状态评审值得直接抄**：Goldfish 子智能体不带对话历史、只按规格评审；HC 的评审与 CI 都在同一会话上下文里跑，容易受前面讨论影响，把评审拆成独立无状态环节是最小改动。\n- **「假成功」是通病**：领导仓把假成功改成等待真实产物，Co-Design Bench 的 26.4% 也说明同类问题；HC 的复查挂账积压半个月，本质是缺少「产物到位才算完」的判定。\n- **轨迹与关键步骤分开打分**：TraceMRT 显示 CoT 监控可被包装绕过，但分层贝叶斯监控能把 AUC 拉到 0.91——审计应同时看整体轨迹与单步动作。\n- **决策评估加校准项**：Decision Score 奖励「正确 + 置信度校准」，压缩决策器若只优化准确率会学到过度自信的策略。\n- **评测集先自检**：Amazon 发现 9 个基准参考答案有错；HC 若建 eval，第一步应是抽样人工核对参考答案。\n- **错误回灌比重训便宜**：小鼠手术定位误差靠「医生纠正后存图供下次参考」从 0.6mm 降到 0.3mm，与记忆层「把纠正写进笔记」同路。\n- **暂无直接改动**：DeepSeek Harness 日活只说明开源 harness 规模；Arete-27B、Nvidia 调查与发电机组采购属外部观察。\n\n## 扫描口径\n\n数据取自 AIHOT 公开只读接口的今日日报、24 小时精选与热点榜（今日日报仅收录 1 条，24 小时全量 52 条候选），按 Agent / 智能体、大模型、具身智能三类优先筛选；今日窗口内无具身智能方向的实质新进展，故该类缺席。条目按重要性排序，只陈述原文事实。\n\n---\n飞书文档：https://wv18cbjmgi0.feishu.cn/docx/Ik6Rdikbwo6qWAxiVfIcwyyvnjp\n",
+          "items": [
+            {
+              "title": "Google 开源 Elephant-Goldfish：无状态子智能体做规格先行评审",
+              "summary": "先出规格，再由无对话历史的 Goldfish 子智能体分 5 阶段评审。"
+            },
+            {
+              "title": "Artificial Analysis 发布 Decision Index v2",
+              "summary": "私有集占比升至 45%，Decision Score 同时奖励正确率与置信度校准。"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-11-08",
       "model": "Amoo",
       "channels": [

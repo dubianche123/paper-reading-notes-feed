@@ -1,6 +1,27 @@
 {
   "days": [
     {
+      "date": "2026-11-10",
+      "model": "Amoo",
+      "channels": [
+        {
+          "id": "03",
+          "title": "2026-11-10 · AI HOT 日报",
+          "content": "# 2026-11-10 · AI HOT 日报\n\n## 今日风向\n\n今天是 Anthropic 的一天：Claude Fable 5.2 与 Mythos 5.2 发布，Fable 在 Artificial Analysis Intelligence Index v5 以 65 分登顶、ARC-AGI-2 拿到 93.8%，输入价格从每百万 token 10 美元降到 8 美元、速度提升 30%。更扎眼的是规模实验：1000 个 Fable 5.2 智能体在沙箱里花 28.7 小时复现了费马大定理的形式化证明，输出 token 只有 9 月那次的三分之一、证明长度七分之一；同一设置下 Opus 5.5 只完成 26% 就几乎停滞。\n\n与之配套的是一条容易忽略的产品变化：Fable 5.2 的 preserved thinking 覆盖全部 API 账号以阻止知识蒸馏，直接编辑先前上下文可能返回 400，官方建议改用 compaction、context editing 或会话中途 system messages。「上下文编辑」变成受限操作，压缩被推向必经路径。安全侧：Claude Code 的设置文件在 GitHub 公开仓库泄露数千个密钥；推理服务商 Fireworks 被黑客从第三方云服务商进入开发机，触及客户账单与部分模型权重。模型侧 Meta 用 Muse Ember（36 分、追平 Haiku 5.5、成本三分之一）押注智能体高频任务；具身侧 Apple 的 AMP1 让通用模型零样本操控机械臂胜过 VLA。\n\n## 今日要闻\n\n1. **Anthropic 发布 Claude Fable 5.2 与 Mythos 5.2（同一底层模型，Mythos 需通过 Cyber 或 Life Sciences 验证计划申请）：Fable 以 65 分登顶 AA Intelligence Index v5，ARC-AGI-2 达 93.8%，输入价降至 8 美元、输出 40 美元每百万 token，速度提升最多 30%。** 官方称其在高难度技术任务上明显更强，并支持企业零数据保留。[原文](https://www.anthropic.com/claude-fable-and-mythos-5-2)\n2. **Anthropic 用 1000 个 Fable 5.2 智能体在沙箱内无研究者指导地复现费马大定理形式化证明：28.7 小时完成，输出 token 只有 9 月那次的三分之一、证明长度为七分之一。** 同一设置下 Opus 5.5 在 18 小时只完成 26%、30 小时后几乎没有更多进展。[原文](https://claude.dev/blog/safely-scaling-multi-agent-teams-with-fable-5-2/)\n3. **METR 的报告在新模型发布同期引发递归自我改进（RSI）担忧：Anthropic 一边发布 Mythos 5.2 与 Fable 5.2，一边被外部评估指向能力改进速度加快。** 能力曲线的斜率本身开始成为安全议题。[原文](https://techcrunch.com/2026/11/09/anthropic-releases-new-mythos-and-fable-models-amid-rsi-concerns/)\n4. **Apiiro 安全研究人员发现 Claude Code 的设置文件在 GitHub 公开仓库泄露了数千个密钥，包括数据库密码、API token 与 root 登录信息。** 智能体生成的配置文件成了新的泄露面，往往不进常规代码审查。[原文](https://arstechnica.com/ai/2026/11/claude-code-settings-files-expose-thousands-of-secrets-on-github/)\n5. **Meta 发布 Muse Ember（muse-ember-1.0）：定位最小最高效的复杂推理执行模型，面向工具调用、编码子任务、路由、抽取与长文档解析等智能体日常重复任务。** AA 评测 36 分、追平 Claude Haiku 5.5 而成本约三分之一，并在 Code Arena WebDev 拿下小模型最高分。[原文](https://research.meta.ai/blog/muse-ember)\n6. **Apple 论文提出 AMP1：让 Claude Opus 5.5 或 Gemini 4 Argon 等通用模型通过相机画面、代码执行与直接运动指令控制机械臂，无需示教或任务训练，表现胜过 VLA 专用模型。** 具身控制开始被「通用模型 + 接口」接管。[原文](https://x.com/rohanpaul_ai/status/2119939013935255693)\n7. **百度文心发布自动研究系统 ERNIE Evolve：双层循环组织研究方向选择与实验迭代，由 Director、Selector、Executor、Evaluator 与 Reviewer 分工推进。** 公开任务上刷新 NanoChat 与 NanoGPT Speedrun 纪录，并把优化落到 ERNIE-5.5-Flash 的推理侧。[原文](https://ernie.baidu.com/zh/research/posts/ernie-evolve/)\n8. **推理服务商 Fireworks 遭黑客入侵：经一家托管其研究系统的第三方云服务商进入开发机，触及客户账单记录，部分账户的数据集与不完整模型权重受影响。** 供应链上的「第三方运维商」再次成为最短那块板。[原文](https://x.com/rohanpaul_ai/status/2119949891938218446)\n9. **OpenAI 发布 Control Room：集中追踪研究基础设施中的模型工作负载，从收到停止指令到终止模型输出最多 35 秒，采用 fail-closed 设计——服务宕机或被禁用时所有推理请求一律拒绝。** 「停得住」被做成基础设施，而不是流程承诺。[原文](https://openai.com/index/control-room)\n10. **Anthropic 宣布 Fable 5.2 的 preserved thinking 覆盖全部 API 账号以防知识蒸馏：直接编辑先前上下文可能返回 400，官方建议改用 compaction、context editing 或会话中途 system messages。** 「改写历史」这条路被收窄，压缩从优化手段变成必经路径。[原文](https://x.com/ClaudeDevs/status/2119868703265419688)\n\n## 与仓库进展的对照\n\n对照昨晚 22:00 的双仓总结（HC 连续第四天 0 条新提交，main 仍停在 11-05；五项挂账原样——chat replay 那条 5.6 万行提交未核、转发头收窄后代理清单未同步会误判 IP、四笔依赖同日更新是否跨大版本、1.0.9 是第三个由自动化账号直接发的版本、10-23 两项已挂半个月。领导仓 30 条、今日 27 条：企业网关加固（#325 一次 129 文件：工具出站加私网与元数据守护、令牌与命令密钥改常量时间比较、流式写出后不换渠道重试、渠道分层故障转移、MCP 会话 ID 签名、配置失败保留最后快照）、虚拟模型（按权重优先级解析成真实模型，配额与计量按真实模型算）、托管 MCP 工具面（草稿发布 + 技能正文摘要校验）、跨引擎 subagent、规划文档）：\n\n- **压缩从可选变成必经**：preserved thinking 让「编辑先前上下文」返回 400，官方点名 compaction 与 context editing 作为替代——压缩不再只是省钱优化，而是接口约束下的唯一路径，payback horizon 的基准线要按「必须压」重设。\n- **规模化的前提是可验证**：1000 个智能体复现费马证明成立，是因为形式化检查器能机器判定每一步；HC 的 orchestrator 要扩规模，先得有同等强度的完成判据。\n- **新泄露面在配置文件**：Claude Code 设置文件泄露数千密钥，说明智能体自己写出的配置不经过代码审查；gitleaks 规则应把这类目录显式纳入。\n- **「停得住」有范本了**：Control Room 的 35 秒停机 + fail-closed，正对应 HC 只有「继续」没有「真停」的缺口。\n- **第三方即风险面**：Fireworks 从托管运维商被攻破，与领导仓给工具出站加私网与元数据守护是同一威胁模型的两端。\n- **小模型承接高频子任务**：Muse Ember 以三分之一成本追平 Haiku 5.5，压缩决策器与路由共用廉价执行体，成本模型可据此重算。\n- **暂无直接改动**：AMP1 与 ERNIE Evolve 属能力观察；METR 的 RSI 担忧属外部评估。\n\n## 扫描口径\n\n数据取自 AIHOT 公开只读接口的今日日报、24 小时精选与热点榜（今日日报收录 9 条，另补 24 小时全量共 120 条候选，其中 Fable 5.2 相关条目高度重复，已合并为单条并保留信息量最大的原始链接）。按 Agent / 智能体、大模型、具身智能三类优先筛选，行业类靠后。条目按重要性排序，只陈述原文事实。\n\n---\n飞书文档：https://wv18cbjmgi0.feishu.cn/docx/ICeedxwjZoulJpxeM9dcWEvDn5c\n",
+          "items": [
+            {
+              "title": "Anthropic 发布 Claude Fable 5.2 与 Mythos 5.2",
+              "summary": "AA v5 以 65 分登顶、ARC-AGI-2 达 93.8%，输入降至 $8/M，速度快 30%。"
+            },
+            {
+              "title": "1000 个 Fable 5.2 智能体复现费马大定理形式化证明",
+              "summary": "28.7 小时完成，token 仅原 1/3；同设置下 Opus 5.5 只完成 26%。"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-11-09",
       "model": "Amoo",
       "channels": [

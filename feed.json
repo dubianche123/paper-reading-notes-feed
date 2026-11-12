@@ -1,6 +1,27 @@
 {
   "days": [
     {
+      "date": "2026-11-12",
+      "model": "Amoo",
+      "channels": [
+        {
+          "id": "03",
+          "title": "2026-11-12 · AI HOT 日报",
+          "content": "# 2026-11-12 · AI HOT 日报\n\n## 今日风向\n\n今天的主线是「决策、协调与成本这三件小事被单独产品化」。Google 发布 Gemini Decisions API 与 Gemini Decision 1：150 到 250 毫秒端到端延迟，一次可评估最多 1000 个是/否、多选与打分题，输入每百万 token 仅 0.10 美元——把「高频小判断」做成独立接口，正好对上「此刻该不该压缩」这类决策的部署形态。Anthropic 的 MAMUBench 给出相反方向的证据：在多用户共享预算、共享诊所日历、团体订餐与合并队列四类环境里，让一个智能体统一协调，普遍胜过每个用户各自带一个智能体团队。\n\n成本与评估侧同样有料：OpenRouter 用盈亏平衡负载法算自托管与 API 的临界点——Qwen3.8 27B 单卡只要跑到 6% 到 12% 的负载就回本；CMU 与 JetBrains 的论文指出 token 花费衡量的是使用强度而非工程产出。工程侧：OpenRouter 给出 Agent 无限循环烧钱的四层防护，AWS 发布可本地离线运行的 AWS Emulator 供编码智能体测试。具身方向，Runway 开源 27B 世界动作模型 Praxis-1，Gemini Robotics 2.5 在奔驰产线把分拣成功率做到 96%。\n\n## 今日要闻\n\n1. **Google 发布 Gemini Decisions API 与 Gemini Decision 1：150 到 250 毫秒端到端延迟，一次评估最多 1000 个是/否、多选与评分题，支持文本、图像、音频、视频与最多 256K token 的 PDF，输入每百万 token 0.10 美元。** 高频小判断变成可按次计价的接口。[原文](https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/)\n2. **Anthropic 发布 MAMUBench：在共享 API token 预算、诊所日历、团体订餐或旅行预订、合并队列四类多用户多智能体环境里，单一智能体统一协调在各环境均胜过「每个用户各配一个智能体团队」。** 协同的瓶颈不是模型数量，而是协调成本。[原文](https://alignment.anthropic.com/2026/worse-together/)\n3. **OpenRouter 拆解 Agent 因工具反复失败而无限循环烧钱的成因，并给出四层防护：doom-loop 检测、loopKey 参数归一化、stopWhen 步数与成本上限、API key 信用额度。** 「让它停」需要多层叠加，单靠超时不够。[原文](https://openrouter.ai/blog/tutorials/ai-agent-infinite-loop/)\n4. **CMU 与 JetBrains 论文：关联 404 名工程师 5 周的编码智能体 token 使用与提交记录，外加 412 份问卷，发现 token 消耗反映的是使用强度而非工程产出。** 约九成技术岗位评估中把智能体用于编码之外的任务，拿 token 或提交量当绩效会测错东西。[原文](https://x.com/rohanpaul_ai/status/2120565644899012710)\n5. **OpenRouter 用盈亏平衡负载法比较自托管与 API：盈亏平衡点等于 GPU 每小时租金除以同小时 token 的 API 费用，Qwen3.8 27B 单卡约在 6% 到 12% 负载即回本。** 把「回本」写成可计算阈值的一个干净范例。[原文](https://openrouter.ai/blog/insights/self-hosted-llm-vs-api/)\n6. **AWS 发布 AWS Emulator：为编码智能体提供可本地离线运行的 AWS 副本，基于 400 多个 API 模型、覆盖 200 多项服务，代码 CC0 开源，且全部由智能体编写与测试。** 给智能体一块可以随便试错的云。[原文](https://www.allthingsdistributed.com/2026/11/aws-emulator-and-the-engineers-job-when-agents-write-the-code.html)\n7. **Runway 以 Apache 2.0 开源 27B 世界动作模型 Praxis-1：MoE 扩散 Transformer 同时预测视频与动作，在 NVIDIA RoboLab-120 上以 46.2% 成功率居首，超过 FLUX 3 Action 42.9%、Cosmos3 Nano 36.8% 与 π0.5 28.0%。** 世界动作模型的权重开始对外开放。[原文](https://runwayml.com/news/company-news/praxis-1-is-now-available)\n8. **Google 发布 Gemini Robotics 2.5：灵巧性、可靠性与安全性明显提升，机器人可使用日常工具并处理柔软易变形物品；奔驰产线实测中 Apollo 2 人形机器人以 96% 成功率拣选打包汽车零部件。** 同时推出针对机器人对抗性越狱的新基准。[原文](https://x.com/Google/status/2120549218905407764)\n9. **Anthropic 修订版 S-1 披露与 Microsoft、Google 的超百亿美元新算力协议：微软承诺到 2033 年 6 月支出至少 472 亿、最高 492 亿美元，Google 最低承诺从约 1145 亿升至约 1213 亿美元，两笔均不可撤销、不用也要付。** 上季度短期算力支出 50 亿美元且价格明显更高。[原文](https://x.com/rohanpaul_ai/status/2120369586096976098)\n10. **WSJ 报道 Nvidia 董事会接近决定是否罢免 CEO 黄仁勋：此前董事会公开支持，如今态度转向。** 董事会此前称没有理由认为公司机密泄露。[原文](https://x.com/rohanpaul_ai/status/2120663635479625930)\n\n## 与仓库进展的对照\n\n对照昨晚 22:00 的双仓总结（HC 13 条、今日 8 条：hcctl 部署工具一次成型——CLI 与托管堡垒机会话、在审批过的 SSH 会话上做带校验的文件传输与可续传 SFTP、可续传的多节点发布、远端任务监管加限定范围取消，4108 行 28 文件；管理台能力卡片可携带配置、能力面板合并进单一货架、两级面包屑。复查挂账：部署工具直接摸生产、限定取消若边界不准会误杀别人的远端任务、水印修复出现重复标题、角色进了水印输出文件名、13 条里 12 条仍是自动化账号。领导仓 4 条：Codex provider 逐项能力收口——不再把 model_provider 标记当 spawn 参数透传、MiMo Responses 上关掉 web_search、百炼/DashScope 上关掉 reasoning effort、切 provider 时跳过 Codex resume）：\n\n- **决策成本可以归零了**：Decisions API 一次评估上千个封闭问题、每百万 token 0.10 美元，压缩决策器可按 turn 在线跑，payback horizon 里的决策开销项基本可忽略，重点回到收益侧。\n- **回本有了标准算法**：盈亏平衡负载法（租金 ÷ 同小时 API 费用）可搬到摘要压缩——把「压缩带来的节省」换成「API 费用下降」，算出多少步才抵掉压缩与摘要维护成本。\n- **协调成本高于并行收益**：MAMUBench 显示单协调者优于每人一队，与「单 Agent 优于子智能体」「10×10 小团队」并列，结论一致——先收敛接口与状态，再谈扩数量。\n- **别拿 token 当产出**：CMU 的结论对 HC 直接适用；评估应看「产物是否通过验证」，而不是提交条数或 token 消耗。\n- **「停得住」要分层**：doom-loop 检测 + 步数/成本上限 + 额度兜底三层互补，单层在长任务里都会漏。\n- **高危面需要单独验收**：hcctl 一口气加上堡垒机、SFTP、多节点发布与远端取消，建议把权限与取消范围做成两条独立验收用例。\n- **暂无直接改动**：AWS Emulator 与 Praxis-1、Gemini Robotics 2.5 属能力观察；S-1 算力协议与 Nvidia 董事会动向属外部事件。\n\n## 扫描口径\n\n数据取自 AIHOT 公开只读接口的今日日报、24 小时精选与热点榜（今日日报收录 9 条，另补 24 小时全量共 120 条候选，其中 Gemini Decision 1 相关条目高度重复，已合并为单条并保留信息量最大的原始链接）。按 Agent / 智能体、大模型、具身智能三类优先筛选，行业与资本类靠后并仅保留 2 条。条目按重要性排序，只陈述原文事实。\n\n---\n飞书文档：https://wv18cbjmgi0.feishu.cn/docx/X7iTdEr4Son4OIxLK2zcTRasn9e\n",
+          "items": [
+            {
+              "title": "Google 发布 Gemini Decisions API 与 Decision 1 决策模型",
+              "summary": "150-250ms 延迟，一次评估最多 1000 个封闭问题，输入 $0.10/M tokens。"
+            },
+            {
+              "title": "Anthropic MAMUBench：单智能体协调胜过每人一队",
+              "summary": "四类多用户环境中，统一协调的单一智能体均优于每用户各自的智能体团队。"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-11-11",
       "model": "Amoo",
       "channels": [

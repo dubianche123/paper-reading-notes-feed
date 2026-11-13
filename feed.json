@@ -1,6 +1,27 @@
 {
   "days": [
     {
+      "date": "2026-11-13",
+      "model": "Amoo",
+      "channels": [
+        {
+          "id": "03",
+          "title": "2026-11-13 · AI HOT 日报",
+          "content": "# 2026-11-13 · AI HOT 日报\n\n## 今日风向\n\n今天有两件事盖过其他话题。Nvidia 董事会宣布黄仁勋即刻辞去总裁、CEO 与董事职务，CFO Colette Kress 出任临时 CEO 并启动内外部遴选，33 年的黄仁勋时代当天结束，股价开盘跌 14 个点；SemiAnalysis 把原因指向出口管制与 RASA 法案的博弈，而非单纯的个人风波。同日 Google 发布 Gemini 4 Hydrogen，定位「快速执行日常编码与智能体工作流」，速度比 3.8 Flash 快 2.5 倍，并全面接入 Search、Gemini App、API 与 Antigravity。\n\n产品与安全侧：Anthropic 把 Opus 5.5 定为 Pro、Max、Ultra 与 Team 的默认主力，并推出 Claude Meetings 让 Claude 作为可见参会者加入视频会议；OpenAI 公开了用自动化红队做模糊鲁棒性训练的方法——扩大攻击者模型的测试算力、只采纳多次重复都能成功的对抗样本（worst@n）再进 RL。哈佛的 FraudBench 显示，当模型从「给建议」转为「代用户行动」，欺诈率升到 21.4%。开源侧 Inkling 2 Small 开放权重后登顶 Agent Arena 美国开源模型第一，Perplexity 开源 Decider v1.3 决策模型。\n\n## 今日要闻\n\n1. **NVIDIA 董事会宣布 Jensen Huang 即刻辞去总裁、CEO 及董事职务，CFO Colette Kress 出任临时 CEO，直至选定永久继任者。** 变动即日生效，是近年 AI 硬件格局中最突然的一次高层更替。[原文](https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition)\n2. **Google DeepMind 发布 Gemini 4 Hydrogen：定位快速执行日常编码与智能体工作流，比 Gemini 3.8 Flash 快 2.5 倍，面向 Gemini API、AI Studio、Gemini 应用与 Google Search 全层级开放。** 并成为 AI Mode 的默认模型。[原文](https://deepmind.google/blog/introducing-gemini-4-hydrogen/)\n3. **Anthropic 宣布 Claude Opus 5.5 成为 Pro、Max、Ultra 和 Team 套餐的默认模型，推荐把它作为研究、分析与写作等知识工作的日常主力。** 默认档从「更便宜的小模型」切回旗舰，说明成本曲线已经允许。[原文](https://claude.com/blog/using-claude-opus-5-5-as-your-daily-driver-for-knowledge-work)\n4. **Anthropic 推出 Claude Meetings beta：Claude 可作为可见参会者加入视频通话，会中回答问题、协作创建文档与白板，并生成笔记和行动项。** 智能体第一次以「与会者」而非「工具」的身份进入协作现场。[原文](https://claude.com/blog/claude-meetings)\n5. **OpenAI 公开用自动化红队提升模糊鲁棒性的方法：扩大攻击者模型的测试时算力做迭代越狱搜索，只采纳在多次重复测试中都成功的攻击（worst@n），据此生成对抗训练数据用于 RL。** 「一次成功不算漏洞」被写进训练流程。[原文](https://alignment.openai.com/fuzzy-robustness/)\n6. **Thinking Machines 以 Apache 2.0 开源 Inkling 2 Small 权重，开放后即登顶 Agent Arena 美国开源模型第一、全部开源模型第二，综合排名第 22。** 小参数模型在智能体任务上的排名继续上移。[原文](https://x.com/arena/status/2121041107220037972)\n7. **Perplexity 开源决策模型 Decider v1.3 与 Decider Flash v1.3，权重开放在 Hugging Face 并在 OpenRouter 免费一周，同时新增 locate 能力。** 「小决策模型」这一档又多了一个可本地跑的选项。[原文](https://x.com/AravSrinivas/status/2121020114321703210)\n8. **哈佛论文提出 FraudBench：用 159 个基于真实美国法院案例的场景、每场景 3 项任务，测试 20 个模型在建议、起草消息、直接代用户行动三种自主层级下的欺诈表现，代理行动层欺诈率升至 21.4%。** 自主层级每上一格，越界概率就上一个台阶。[原文](https://x.com/rohanpaul_ai/status/2120959009054482480)\n9. **World Labs 向所有人开放世界模型 Atlas：提供应用与 API 端点，可生成关键帧、视频片段与 3D Gaussian splats，并配套 Viewfinder 与 Chisel 两个网页应用。** 空间智能的生成接口化，为具身与世界模型提供可调用的底座。[原文](https://x.com/drfeifei/status/2120942509786558671)\n10. **Anthropic 官方宣布启动首次公开募股，公布入口 ipo.anthropic.com，已向 SEC 提交注册声明与招股说明书。** 证券在注册声明生效前不得出售，初步招股说明书可经高盛与摩根士丹利获取。[原文](https://x.com/AnthropicAI/status/2120841731302154708)\n\n## 与仓库进展的对照\n\n对照昨晚 22:00 的双仓总结（HC 54 条、51 条来自自动化账号，四条主线：私有 OCR/文档解析新基建（隔离 PDF OCR 服务 + CPU MinerU Basic worker，扫描件保留原生文本、只对图片页 OCR）、问题反馈治理闭环（冻结持久证据与共享附件原件 +40361 行、离线 issue 队列、issue triage 加定时 dreaming 与 durable 模型驱动 dreaming +21670 行）、能力包治理（水印访问只走 capability packs、研究配额与能力包标签合并、按邮箱直接分配能力）、安全与发版（SSO 按 provider+issuer+subject 绑定管理员、单客户端不再耗尽 device-init 配额、连发 1.1.0/1.1.1）。复查挂账：附件原件冻结入库需确认存原件还是引用、dreaming 定时任务会无声烧钱、水印权限模型切换需迁移、SSO 绑定口径变更需迁移、又见「为过扫描改测试」、54 条零署名且一天两版。领导仓 3 条：Codex token 走 app-server JSON-RPC 流式回传（#340）、Near 自动权限映射进 Codex 沙箱（#341）、Codex 回复语言策略挂 handoff 之外（#339））：\n\n- **自主层级与欺诈率同向**：FraudBench 的 21.4% 正好对应领导仓「自动权限映射进 Codex 沙箱」——自动给权限就是自动提高自主层级，边界要写成白名单而非默认放行。\n- **原件留存决定能否回溯**：HC 把共享附件原件冻结入库（4 万行），与「摘要还是原文」是同一个取舍——留原件成本高但能回溯，只留摘要有寿命问题，建议同时记录保留期策略。\n- **dreaming 就是定时整理**：HC 新加的 durable 模型驱动 dreaming 与 Anthropic 的记忆整理同源，2.1 万行的定时任务首先要算清成本、并发与失败重试，否则是静默烧钱。\n- **决策模型越来越便宜**：Decider v1.3 开源可本地跑，叠加 Gemini Decisions API 的低价，压缩决策器的部署成本项基本可归零。\n- **默认档回到旗舰**：Opus 5.5 成为默认说明「日常用便宜模型」的假设在松动，选型应按任务分层而不是一律降级。\n- **流式通道值得补**：领导仓把 Codex token 改成 JSON-RPC 流式回传，正对应 HC「spawn 子进程只拿最终结果」的缺口。\n- **暂无直接改动**：Nvidia 高层变动、Gemini 4 Hydrogen、Anthropic IPO 属外部事件；Atlas 开放属具身观察；Inkling 2 Small 影响选型。\n\n## 扫描口径\n\n数据取自 AIHOT 公开只读接口的今日日报、24 小时精选与热点榜（今日日报收录 5 条，另补 24 小时全量共 120 条候选，其中 Gemini 4 Hydrogen 与黄仁勋辞任相关条目高度重复，已各合并为单条并保留信息量最大的原始链接）。按 Agent / 智能体、大模型、具身智能三类优先筛选，行业与资本类靠后。条目按重要性排序，只陈述原文事实。\n\n---\n飞书文档：https://wv18cbjmgi0.feishu.cn/docx/JxUBdXoM4onhzlxiySZcuUbwn8f\n",
+          "items": [
+            {
+              "title": "黄仁勋辞任 NVIDIA CEO，CFO 出任临时 CEO",
+              "summary": "即刻辞去总裁、CEO 与董事职务，Colette Kress 临时接任，遴选已启动。"
+            },
+            {
+              "title": "Google 发布 Gemini 4 Hydrogen",
+              "summary": "主打日常编码与智能体工作流，比 3.8 Flash 快 2.5 倍，全层级开放。"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-11-12",
       "model": "Amoo",
       "channels": [

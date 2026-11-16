@@ -1,6 +1,27 @@
 {
   "days": [
     {
+      "date": "2026-11-16",
+      "model": "Amoo",
+      "channels": [
+        {
+          "id": "03",
+          "title": "2026-11-16 · AI HOT 日报",
+          "content": "# 2026-11-16 · AI HOT 日报\n\n## 今日风向\n\nAIHOT 的今日日报判定「没有新的 AI 大事」，但 24 小时窗口里仍有两条值得记：美团把 1.6 万亿参数的智能体模型 LongCat-2.5 以 MIT 许可开放权重，每 token 激活约 480 亿，官方部署方案基于 194 片华为 Ascend，全程未用 Nvidia GPU；Anthropic 的 Fable 5.2 演示了另一条路线——不调用图像模型，而是用 1000 到 2000 行 Python 驱动模拟画笔引擎，在一幅「停车场购物车」上打了约 70 万次模拟笔触。\n\n工程侧，Google DeepMind 与哥伦比亚大学的 BTTF 框架把超过 10GB 的芯片仿真波形转成紧凑 SQLite 库，让多智能体把自然语言问题翻成 SQL 去查、再审计答案——实际上是「把上下文外置成可查询结构」。行业面，美国国会两党正推动收紧 AI 芯片出口并要求 Nvidia 高管作证；谷歌 Project Zero 因 AI 加速漏洞挖掘，把披露期限从 90 天分阶段压到 30 天。具身方向出现分歧信号：据报道 OpenAI 解散了机器人团队，理由是通用模型可能让专用机器人 AI 变得不必要。\n\n## 今日要闻\n\n1. **美团开源 LongCat-2.5：面向智能体的 1.6 万亿参数 MoE、每 token 激活约 480 亿，MIT 许可，官方部署基于 194 片华为 Ascend 加速器，全程未使用 Nvidia GPU。** 万亿级开放权重第一次给出「非 Nvidia」的完整训练与部署路径。[原文](https://the-decoder.com/meituan-releases-a-1-6-trillion-parameter-agent-model-that-never-touched-an-nvidia-gpu/)\n2. **Claude Fable 5.2 不走扩散路线：用 1000 到 2000 行 Python 程序驱动模拟画笔引擎逐笔作画，「停车场购物车」场景约 70 万次模拟笔触，不依赖外部图像模型或底图。** 生成能力又一次通过「模型写代码」而不是「模型出图」实现。[原文](https://the-decoder.com/anthropics-claude-fable-5-2-doesnt-generate-images-it-paints-them/)\n3. **Google DeepMind 与哥伦比亚大学提出 BTTF 框架：把超过 10GB 的芯片仿真波形转储压成紧凑 SQLite 数据库，多智能体把自然语言问题翻成 SQL、检查设计规则并审计答案。** 与其把巨量数据塞进上下文，不如外置成可查询结构。[原文](https://x.com/rohanpaul_ai/status/2122114049353908599)\n4. **据 The Decoder 报道，OpenAI 已解散机器人团队、研究人员并入其他部门，报道把原因指向「通用模型可能让专用机器人 AI 变得不必要」。** 具身路线出现「通用模型 + 接口」与「专用 VLA」之争的新证据。[原文](https://the-decoder.com/openai-reassigns-robotics-researchers-to-other-teams-as-general-purpose-models-might-make-specialized-robotics-ai-unnecessary/)\n5. **美国国会寻求进一步收紧 AI 芯片出口：两党均支持相关法案，并要求 Nvidia 高管出席作证；参议院银行委员会主席已致函 Nvidia 高管与商务部长要求公开作证。** 众议院议长称国会内部在限制对华芯片出口上正形成共识。[原文](https://www.theverge.com/ai-artificial-intelligence/1033984/congress-export-rules-ai-chips-china)\n6. **谷歌 Project Zero 发布新披露政策：因 AI 辅助漏洞挖掘与利用技术兴起，现有「90+30 天」难以适应，将分阶段把披露期限从 90 天缩短至 30 天。** 攻防节奏被 AI 压缩后，补丁窗口也被压缩。[原文](https://www.ithome.com/1/027/423.htm)\n7. **Cloudflare 开源 AI 智能体浏览器 Kitesurf。** 智能体的「上网」从外部工具变成可自托管的浏览器底座。[原文](https://www.ithome.com/1/027/197.htm)\n8. **华为云 MaaS 上线开源盘古 openPangu-2.1-Pro：围绕 Agent 开发、AI 编码与推理优化三方向升级，增强深度研究、鸿蒙系统操控、鸿蒙 App 开发与昇腾算子生成等场景能力。** 国产模型把「操控自家操作系统」做成卖点。[原文](https://www.ithome.com/1/027/450.htm)\n9. **韩国第 63 届税务师考试头名考生自首：用微型摄像头拍题发给生成式 AI 作答，第一轮 160 道选择题仅错 1 题；政府决定对今年所有国家资格考试全面调查 AI 作弊，并引入红外探测与举报中心。** AI 作弊从个体行为变成考试制度问题。[原文](https://www.ithome.com/1/027/303.htm)\n10. **Gartner 预测 2025 至 2030 年 AI 将创造 1060 万个岗位、取代 890 万个，净增约 170 万个；超过 20%（约 4.355 亿）劳动者需适应 AI 带来的工作方式变化。** 政府部门更易流失岗位，服务业可能因收益增加而扩招。[原文](https://www.ithome.com/1/027/427.htm)\n\n## 与仓库进展的对照\n\n对照昨晚 22:00 的双仓总结（HC 连续第三天 0 条新提交，main 仍停在 11-12 19:13；五项挂账原样——工单流程 2 万行的事务状态机与双人并发写入未验、「已验证服务端 trace」的判定口径未抽查真实链路、导出脱敏只覆盖下载路径而旧证据回溯方案未定、两次「为过扫描改测试」是否掩盖真实密钥未核、5.6 万行回放采集与附件原件的保留期与隐私口径未确认。领导仓 3 条全是文档基线同步：框架层（cc_bridge、cli、gateway 结论更新，新增 data_suite 与 harness 模块结论）、Enterprise 层（admin-console、gateway、web-portal、deploy 更新，新增 agent-runtime 模块结论）、Desktop 层（README、desktop_conclusion、registry.json 与 state/desktop.json 同步到当前基线））：\n\n- **外置上下文的新范式**：BTTF 把 10GB 波形压成 SQLite、让 agent 用 SQL 查，是「不压缩而是结构化外置」的实例——HC 若能对 trace、证据库做同样的事，检索会比把内容塞进上下文更省。\n- **扫描窗口在收紧**：Project Zero 把披露期压到 30 天，依赖与密钥类修复的窗口同步变短；gitleaks/依赖升级节奏要按「月度」而非「季度」规划。\n- **具身路线在分叉**：OpenAI 解散机器人团队提示「通用模型 + 接口」可能吃掉专用 VLA，对「世界模型 + 动作」的投入判断是反向信号。\n- **非 Nvidia 路径已可跑万亿级**：LongCat-2.5 用 194 片 Ascend 完成 1.6T 训练与部署，模型选型时的硬件假设不应再默认 Nvidia。\n- **结论要配注册表与状态**：领导仓把「结论 + registry + state」一起改，正对应 HC 只有 latest.md 单文件的缺口——模块级结论何时过期无法追踪。\n- **代码作为通用接口**：Fable 5.2 用程序作画、BTTF 用 SQL 查询，都是「模型写代码驱动别的系统」，与 HC 走 CLI/hook 的路线同向。\n- **暂无直接改动**：国会出口管制、Gartner 就业预测与韩国作弊案属外部事件；Cloudflare Kitesurf 与 openPangu 属能力观察。\n\n## 扫描口径\n\n数据取自 AIHOT 公开只读接口的今日日报、24 小时精选与热点榜（今日日报标注无大事，24 小时全量仅 39 条候选，为近期最少；其中 Kitesurf 与 OpenAI 机器人团队两条只在热点榜出现，已单独标注来源）。按 Agent / 智能体、大模型、具身智能三类优先筛选。条目按重要性排序，只陈述原文事实。\n\n---\n飞书文档：https://wv18cbjmgi0.feishu.cn/docx/Tk0Idn0SgofCWmxL0e8cLs6On0c\n",
+          "items": [
+            {
+              "title": "美团开源 1.6 万亿参数 LongCat-2.5，全程未用 Nvidia GPU",
+              "summary": "480 亿激活、MIT 许可；194 片华为 Ascend 训练部署，非 Nvidia 路径可跑万亿级。"
+            },
+            {
+              "title": "Fable 5.2 用 70 万次模拟笔触「画」出照片级作品",
+              "summary": "不走扩散路线，用 Python 驱动模拟画笔逐笔作画，不依赖外部图像模型。"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-11-15",
       "channels": [
         {
